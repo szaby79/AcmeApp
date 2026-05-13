@@ -12,3 +12,4 @@ C:\AcmeApp\obj\Debug\net10.0\refint\AcmeApp.dll
 C:\AcmeApp\obj\Debug\net10.0\AcmeApp.pdb
 C:\AcmeApp\obj\Debug\net10.0\AcmeApp.genruntimeconfig.cache
 C:\AcmeApp\obj\Debug\net10.0\ref\AcmeApp.dll
+C:\AcmeApp\obj\Debug\net10.0\AcmeApp.sourcelink.json
