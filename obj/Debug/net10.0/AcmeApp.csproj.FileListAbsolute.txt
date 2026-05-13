@@ -1,0 +1,14 @@
+C:\AcmeApp\bin\Debug\net10.0\AcmeApp.exe
+C:\AcmeApp\bin\Debug\net10.0\AcmeApp.deps.json
+C:\AcmeApp\bin\Debug\net10.0\AcmeApp.runtimeconfig.json
+C:\AcmeApp\bin\Debug\net10.0\AcmeApp.dll
+C:\AcmeApp\bin\Debug\net10.0\AcmeApp.pdb
+C:\AcmeApp\obj\Debug\net10.0\AcmeApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\AcmeApp\obj\Debug\net10.0\AcmeApp.AssemblyInfoInputs.cache
+C:\AcmeApp\obj\Debug\net10.0\AcmeApp.AssemblyInfo.cs
+C:\AcmeApp\obj\Debug\net10.0\AcmeApp.csproj.CoreCompileInputs.cache
+C:\AcmeApp\obj\Debug\net10.0\AcmeApp.dll
+C:\AcmeApp\obj\Debug\net10.0\refint\AcmeApp.dll
+C:\AcmeApp\obj\Debug\net10.0\AcmeApp.pdb
+C:\AcmeApp\obj\Debug\net10.0\AcmeApp.genruntimeconfig.cache
+C:\AcmeApp\obj\Debug\net10.0\ref\AcmeApp.dll
