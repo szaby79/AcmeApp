@@ -1,41 +1,31 @@
 ﻿using System;
-using System.Text;
 
-namespace StringAssignment
+namespace ConsoleAppAssignment
 {
     class Program
     {
         static void Main(string[] args)
         {
-            // Create three strings
-            string firstString = "Hello";
-            string secondString = "from";
-            string thirdString = "C#";
+            // This is a do while loop
+            int count = 0;
 
-            // Concatenate the three strings
-            string fullString = firstString + " " + secondString + " " + thirdString;
+            do
+            {
+                Console.WriteLine("Inside the loop");
+                count++; // Add 1 to count each time
+            }
+            while (count < 5); // Continue loop until count reaches 5
 
-            // Print concatenated string
-            Console.WriteLine(fullString);
 
-            // Convert string to uppercase
-            string upperCaseString = fullString.ToUpper();
+            // This is a while loop
+            int counting = 0;
 
-            // Print uppercase string
-            Console.WriteLine(upperCaseString);
+            while (counting < 3) // Continue loop until counting reaches 3
+            {
+                Console.WriteLine("Counting numbers");
+                counting++; // Add 1 each time
+            }
 
-            // Create a StringBuilder
-            StringBuilder paragraph = new StringBuilder();
-
-            // Build paragraph sentence by sentence
-            paragraph.Append("C# is a powerful programming language. ");
-            paragraph.Append("It is used for building many types of applications. ");
-            paragraph.Append("Learning C# can help create software and websites.");
-
-            // Print the paragraph
-            Console.WriteLine(paragraph);
-
-            // Keep console window open
             Console.ReadLine();
         }
     }
