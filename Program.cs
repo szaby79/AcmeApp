@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ConsoleAppAssignment
 {
@@ -6,24 +7,61 @@ namespace ConsoleAppAssignment
     {
         static void Main(string[] args)
         {
-            // This is a do while loop
-            int count = 0;
+            // Array of strings
+            string[] fruits = { "Apple", "Banana", "Orange", "Grapes" };
 
-            do
+            // Ask user for index
+            Console.WriteLine("Choose an index for the fruit array (0-3):");
+            int fruitIndex = Convert.ToInt32(Console.ReadLine());
+
+            // Check if index exists
+            if (fruitIndex >= 0 && fruitIndex < fruits.Length)
             {
-                Console.WriteLine("Inside the loop");
-                count++; // Add 1 to count each time
+                Console.WriteLine("Fruit: " + fruits[fruitIndex]);
             }
-            while (count < 5); // Continue loop until count reaches 5
-
-
-            // This is a while loop
-            int counting = 0;
-
-            while (counting < 3) // Continue loop until counting reaches 3
+            else
             {
-                Console.WriteLine("Counting numbers");
-                counting++; // Add 1 each time
+                Console.WriteLine("That index does not exist.");
+            }
+
+            // Array of integers
+            int[] numbers = { 10, 20, 30, 40, 50 };
+
+            // Ask user for index
+            Console.WriteLine("Choose an index for the number array (0-4):");
+            int numberIndex = Convert.ToInt32(Console.ReadLine());
+
+            // Check if index exists
+            if (numberIndex >= 0 && numberIndex < numbers.Length)
+            {
+                Console.WriteLine("Number: " + numbers[numberIndex]);
+            }
+            else
+            {
+                Console.WriteLine("That index does not exist.");
+            }
+
+            // List of strings
+            List<string> colors = new List<string>()
+            {
+                "Red",
+                "Blue",
+                "Green",
+                "Yellow"
+            };
+
+            // Ask user for index
+            Console.WriteLine("Choose an index for the color list (0-3):");
+            int colorIndex = Convert.ToInt32(Console.ReadLine());
+
+            // Check if index exists
+            if (colorIndex >= 0 && colorIndex < colors.Count)
+            {
+                Console.WriteLine("Color: " + colors[colorIndex]);
+            }
+            else
+            {
+                Console.WriteLine("That index does not exist.");
             }
 
             Console.ReadLine();
