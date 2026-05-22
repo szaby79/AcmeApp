@@ -1,48 +1,53 @@
 ﻿using System;
-using System.Collections.Generic;
 
-namespace ConsoleAppAssignment
+// Class that contains math methods
+class MathOperations
 {
-    class Program
+    // Method 1 - adds 10 to the number
+    public int AddTen(int number)
     {
-        static void Main(string[] args)
-        {
-            // List of integers
-            List<int> numbers = new List<int>() { 10, 20, 30, 40, 50 };
+        return number + 10;
+    }
 
-            try
-            {
-                // Ask user for a number
-                Console.WriteLine("Enter a number to divide by:");
-                int userNumber = Convert.ToInt32(Console.ReadLine());
+    // Method 2 - multiplies the number by 2
+    public int MultiplyByTwo(int number)
+    {
+        return number * 2;
+    }
 
-                // Loop through list and divide numbers
-                foreach (int number in numbers)
-                {
-                    int result = number / userNumber;
-                    Console.WriteLine(number + " divided by " + userNumber + " = " + result);
-                }
-            }
-            catch (DivideByZeroException)
-            {
-                // Error if user enters 0
-                Console.WriteLine("Error: You cannot divide by zero.");
-            }
-            catch (FormatException)
-            {
-                // Error if user enters text instead of number
-                Console.WriteLine("Error: Please enter a valid number.");
-            }
-            catch (Exception ex)
-            {
-                // Any other error
-                Console.WriteLine("Error: " + ex.Message);
-            }
+    // Method 3 - subtracts 5 from the number
+    public int SubtractFive(int number)
+    {
+        return number - 5;
+    }
+}
 
-            // Program continues after try/catch
-            Console.WriteLine("The program has continued past the try/catch block.");
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Create object from MathOperations class
+        MathOperations math = new MathOperations();
 
-            Console.ReadLine();
-        }
+        // Ask user for a number
+        Console.WriteLine("Enter a number:");
+
+        // Read user input and convert to integer
+        int userNumber = Convert.ToInt32(Console.ReadLine());
+
+        // Call first method and display result
+        int result1 = math.AddTen(userNumber);
+        Console.WriteLine("Number plus 10 = " + result1);
+
+        // Call second method and display result
+        int result2 = math.MultiplyByTwo(userNumber);
+        Console.WriteLine("Number multiplied by 2 = " + result2);
+
+        // Call third method and display result
+        int result3 = math.SubtractFive(userNumber);
+        Console.WriteLine("Number minus 5 = " + result3);
+
+        // Pause console window
+        Console.ReadLine();
     }
 }
