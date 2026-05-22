@@ -7,62 +7,40 @@ namespace ConsoleAppAssignment
     {
         static void Main(string[] args)
         {
-            // Array of strings
-            string[] fruits = { "Apple", "Banana", "Orange", "Grapes" };
+            // List of integers
+            List<int> numbers = new List<int>() { 10, 20, 30, 40, 50 };
 
-            // Ask user for index
-            Console.WriteLine("Choose an index for the fruit array (0-3):");
-            int fruitIndex = Convert.ToInt32(Console.ReadLine());
-
-            // Check if index exists
-            if (fruitIndex >= 0 && fruitIndex < fruits.Length)
+            try
             {
-                Console.WriteLine("Fruit: " + fruits[fruitIndex]);
+                // Ask user for a number
+                Console.WriteLine("Enter a number to divide by:");
+                int userNumber = Convert.ToInt32(Console.ReadLine());
+
+                // Loop through list and divide numbers
+                foreach (int number in numbers)
+                {
+                    int result = number / userNumber;
+                    Console.WriteLine(number + " divided by " + userNumber + " = " + result);
+                }
             }
-            else
+            catch (DivideByZeroException)
             {
-                Console.WriteLine("That index does not exist.");
+                // Error if user enters 0
+                Console.WriteLine("Error: You cannot divide by zero.");
             }
-
-            // Array of integers
-            int[] numbers = { 10, 20, 30, 40, 50 };
-
-            // Ask user for index
-            Console.WriteLine("Choose an index for the number array (0-4):");
-            int numberIndex = Convert.ToInt32(Console.ReadLine());
-
-            // Check if index exists
-            if (numberIndex >= 0 && numberIndex < numbers.Length)
+            catch (FormatException)
             {
-                Console.WriteLine("Number: " + numbers[numberIndex]);
+                // Error if user enters text instead of number
+                Console.WriteLine("Error: Please enter a valid number.");
             }
-            else
+            catch (Exception ex)
             {
-                Console.WriteLine("That index does not exist.");
+                // Any other error
+                Console.WriteLine("Error: " + ex.Message);
             }
 
-            // List of strings
-            List<string> colors = new List<string>()
-            {
-                "Red",
-                "Blue",
-                "Green",
-                "Yellow"
-            };
-
-            // Ask user for index
-            Console.WriteLine("Choose an index for the color list (0-3):");
-            int colorIndex = Convert.ToInt32(Console.ReadLine());
-
-            // Check if index exists
-            if (colorIndex >= 0 && colorIndex < colors.Count)
-            {
-                Console.WriteLine("Color: " + colors[colorIndex]);
-            }
-            else
-            {
-                Console.WriteLine("That index does not exist.");
-            }
+            // Program continues after try/catch
+            Console.WriteLine("The program has continued past the try/catch block.");
 
             Console.ReadLine();
         }
