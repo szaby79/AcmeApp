@@ -1,24 +1,30 @@
 ﻿using System;
 
-// Class that contains math methods
+// Class that contains overloaded methods
 class MathOperations
 {
-    // Method 1 - adds 10 to the number
-    public int AddTen(int number)
+    // Method that accepts an integer
+    public int DoMath(int number)
     {
+        // Add 10 to the integer
         return number + 10;
     }
 
-    // Method 2 - multiplies the number by 2
-    public int MultiplyByTwo(int number)
+    // Method that accepts a decimal
+    public int DoMath(decimal number)
     {
-        return number * 2;
+        // Multiply decimal by 2 and convert to int
+        return Convert.ToInt32(number * 2);
     }
 
-    // Method 3 - subtracts 5 from the number
-    public int SubtractFive(int number)
+    // Method that accepts a string
+    public int DoMath(string number)
     {
-        return number - 5;
+        // Convert string to integer
+        int convertedNumber = Convert.ToInt32(number);
+
+        // Subtract 5 from the converted integer
+        return convertedNumber - 5;
     }
 }
 
@@ -29,23 +35,17 @@ class Program
         // Create object from MathOperations class
         MathOperations math = new MathOperations();
 
-        // Ask user for a number
-        Console.WriteLine("Enter a number:");
+        // Call method with integer
+        int intResult = math.DoMath(10);
+        Console.WriteLine("Integer result: " + intResult);
 
-        // Read user input and convert to integer
-        int userNumber = Convert.ToInt32(Console.ReadLine());
+        // Call method with decimal
+        int decimalResult = math.DoMath(12.5m);
+        Console.WriteLine("Decimal result: " + decimalResult);
 
-        // Call first method and display result
-        int result1 = math.AddTen(userNumber);
-        Console.WriteLine("Number plus 10 = " + result1);
-
-        // Call second method and display result
-        int result2 = math.MultiplyByTwo(userNumber);
-        Console.WriteLine("Number multiplied by 2 = " + result2);
-
-        // Call third method and display result
-        int result3 = math.SubtractFive(userNumber);
-        Console.WriteLine("Number minus 5 = " + result3);
+        // Call method with string
+        int stringResult = math.DoMath("20");
+        Console.WriteLine("String result: " + stringResult);
 
         // Pause console window
         Console.ReadLine();
