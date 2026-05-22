@@ -1,30 +1,13 @@
 ﻿using System;
 
-// Class that contains overloaded methods
+// Class that contains the math method
 class MathOperations
 {
-    // Method that accepts an integer
-    public int DoMath(int number)
+    // Method with one required integer and one optional integer
+    public int DoMath(int number1, int number2 = 5)
     {
-        // Add 10 to the integer
-        return number + 10;
-    }
-
-    // Method that accepts a decimal
-    public int DoMath(decimal number)
-    {
-        // Multiply decimal by 2 and convert to int
-        return Convert.ToInt32(number * 2);
-    }
-
-    // Method that accepts a string
-    public int DoMath(string number)
-    {
-        // Convert string to integer
-        int convertedNumber = Convert.ToInt32(number);
-
-        // Subtract 5 from the converted integer
-        return convertedNumber - 5;
+        // Add the two numbers together
+        return number1 + number2;
     }
 }
 
@@ -35,17 +18,34 @@ class Program
         // Create object from MathOperations class
         MathOperations math = new MathOperations();
 
-        // Call method with integer
-        int intResult = math.DoMath(10);
-        Console.WriteLine("Integer result: " + intResult);
+        // Ask user for first number
+        Console.WriteLine("Enter the first number:");
+        int firstNumber = Convert.ToInt32(Console.ReadLine());
 
-        // Call method with decimal
-        int decimalResult = math.DoMath(12.5m);
-        Console.WriteLine("Decimal result: " + decimalResult);
+        // Ask user for optional second number
+        Console.WriteLine("Enter the second number (optional):");
+        string secondInput = Console.ReadLine();
 
-        // Call method with string
-        int stringResult = math.DoMath("20");
-        Console.WriteLine("String result: " + stringResult);
+        // If user entered a second number
+        if (secondInput != "")
+        {
+            // Convert second input to integer
+            int secondNumber = Convert.ToInt32(secondInput);
+
+            // Call method with two numbers
+            int result = math.DoMath(firstNumber, secondNumber);
+
+            // Display result
+            Console.WriteLine("Result: " + result);
+        }
+        else
+        {
+            // Call method with only first number
+            int result = math.DoMath(firstNumber);
+
+            // Display result
+            Console.WriteLine("Result: " + result);
+        }
 
         // Pause console window
         Console.ReadLine();
