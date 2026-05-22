@@ -1,13 +1,18 @@
 ﻿using System;
 
-// Class that contains the math method
-class MathOperations
+class MathClass
 {
-    // Method with one required integer and one optional integer
-    public int DoMath(int number1, int number2 = 5)
+    // This void method takes two integers as parameters.
+    public void DoMath(int firstNumber, int secondNumber)
     {
-        // Add the two numbers together
-        return number1 + number2;
+        // Do a math operation on the first integer.
+        int result = firstNumber + 10;
+
+        // Display the result of the math operation.
+        Console.WriteLine("First number plus 10 = " + result);
+
+        // Display the second integer to the screen.
+        Console.WriteLine("Second number = " + secondNumber);
     }
 }
 
@@ -15,39 +20,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Create object from MathOperations class
-        MathOperations math = new MathOperations();
+        // Instantiate the class.
+        MathClass math = new MathClass();
 
-        // Ask user for first number
-        Console.WriteLine("Enter the first number:");
-        int firstNumber = Convert.ToInt32(Console.ReadLine());
+        // Call the method and pass in two numbers.
+        math.DoMath(10, 5);
 
-        // Ask user for optional second number
-        Console.WriteLine("Enter the second number (optional):");
-        string secondInput = Console.ReadLine();
+        // Call the method again, specifying the parameters by name.
+        math.DoMath(firstNumber: 20, secondNumber: 8);
 
-        // If user entered a second number
-        if (secondInput != "")
-        {
-            // Convert second input to integer
-            int secondNumber = Convert.ToInt32(secondInput);
-
-            // Call method with two numbers
-            int result = math.DoMath(firstNumber, secondNumber);
-
-            // Display result
-            Console.WriteLine("Result: " + result);
-        }
-        else
-        {
-            // Call method with only first number
-            int result = math.DoMath(firstNumber);
-
-            // Display result
-            Console.WriteLine("Result: " + result);
-        }
-
-        // Pause console window
+        // Keep the console open.
         Console.ReadLine();
     }
 }
