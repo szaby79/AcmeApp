@@ -1,17 +1,26 @@
-// Employee class inherits from Person and implements the IQuittable interface.
-public class Employee : Person, IQuittable
+// Employee class with Id, FirstName, and LastName properties.
+public class Employee
 {
-    // This method implements the Quit method from the IQuittable interface.
-    public void Quit()
+    // Employee ID property.
+    public int Id { get; set; }
+
+    // Employee first name property.
+    public string FirstName { get; set; }
+
+    // Employee last name property.
+    public string LastName { get; set; }
+
+    // Overloads the == operator to compare two Employee objects by Id.
+    public static bool operator ==(Employee employee1, Employee employee2)
     {
-        // This line displays a message when the employee quits.
-        Console.WriteLine(firstName + " " + lastName + " has quit the job.");
+        // Returns true if both Employee objects have the same Id.
+        return employee1.Id == employee2.Id;
     }
 
-    // This method displays the employee's full name.
-    public override void SayName()
+    // Overloads the != operator to compare two Employee objects by Id.
+    public static bool operator !=(Employee employee1, Employee employee2)
     {
-        // This line prints the employee's first and last name.
-        Console.WriteLine("Name: " + firstName + " " + lastName);
+        // Returns true if the Employee objects have different Id values.
+        return employee1.Id != employee2.Id;
     }
 }
