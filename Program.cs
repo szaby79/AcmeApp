@@ -1,24 +1,9 @@
-﻿using System;
-
-// Main program class
-class Program
+﻿// This creates an Employee object and stores it as an IQuittable type.
+IQuittable employee = new Employee()
 {
-    // Main method where the program starts
-    static void Main(string[] args)
-    {
-        // Create Employee object
-        Employee employee = new Employee();
+    firstName = "Sample",
+    lastName = "Student"
+};
 
-        // Set first name
-        employee.firstName = "Sample";
-
-        // Set last name
-        employee.lastName = "Student";
-
-        // Call SayName method
-        employee.SayName();
-
-        // Keep console open
-        Console.ReadLine();
-    }
-}
+// This calls the Quit method using polymorphism.
+employee.Quit();

@@ -1,14 +1,12 @@
-using System;
-
-// Abstract Person class
+// Abstract Person class.
 public abstract class Person
 {
-    // First name property
+    // Property for first name.
     public string firstName { get; set; }
 
-    // Last name property
+    // Property for last name.
     public string lastName { get; set; }
 
-    // Abstract method
+    // Abstract method that must be implemented in derived classes.
     public abstract void SayName();
 }
