@@ -10,15 +10,12 @@ class Program
         Employee employee = new Employee();
 
         // Set first name
-        employee.FirstName = "Sample";
+        employee.firstName = "Sample";
 
         // Set last name
-        employee.LastName = "Student";
+        employee.lastName = "Student";
 
-        // Set ID
-        employee.Id = 1;
-
-        // Call inherited method
+        // Call SayName method
         employee.SayName();
 
         // Keep console open

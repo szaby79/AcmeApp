@@ -1,17 +1,14 @@
 using System;
 
-// Person class
-public class Person
+// Abstract Person class
+public abstract class Person
 {
     // First name property
-    public string FirstName { get; set; }
+    public string firstName { get; set; }
 
     // Last name property
-    public string LastName { get; set; }
+    public string lastName { get; set; }
 
-    // Method that displays full name
-    public void SayName()
-    {
-        Console.WriteLine("Name: " + FirstName + " " + LastName);
-    }
+    // Abstract method
+    public abstract void SayName();
 }
