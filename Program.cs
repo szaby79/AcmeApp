@@ -1,21 +1,36 @@
-﻿// Creates the first Employee object and assigns values to its properties.
-Employee employee1 = new Employee()
+﻿using System;
+
+// Enum for the days of the week.
+DaysOfWeek currentDay;
+
+try
 {
-    Id = 1,
-    FirstName = "Sample",
-    LastName = "Student"
-};
+    // Prompts the user to enter the current day of the week.
+    Console.WriteLine("Enter the current day of the week:");
 
-// Creates the second Employee object and assigns values to its properties.
-Employee employee2 = new Employee()
+    // Stores the user's input.
+    string userInput = Console.ReadLine();
+
+    // Converts the user's input into the enum data type.
+    currentDay = (DaysOfWeek)Enum.Parse(typeof(DaysOfWeek), userInput, true);
+
+    // Displays the successfully parsed day.
+    Console.WriteLine("You entered: " + currentDay);
+}
+catch
 {
-    Id = 2,
-    FirstName = "Test",
-    LastName = "Employee"
-};
+    // Displays an error message if the user enters an invalid day.
+    Console.WriteLine("Please enter an actual day of the week.");
+}
 
-// Compares the two Employee objects using the overloaded == operator.
-Console.WriteLine("Are the employees equal? " + (employee1 == employee2));
-
-// Compares the two Employee objects using the overloaded != operator.
-Console.WriteLine("Are the employees not equal? " + (employee1 != employee2));
+// Enum for the days of the week.
+public enum DaysOfWeek
+{
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday
+}
