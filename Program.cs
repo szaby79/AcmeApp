@@ -1,36 +1,25 @@
 ﻿using System;
 
-// Enum for the days of the week.
-DaysOfWeek currentDay;
-
-try
+// This struct stores a decimal number.
+public struct Number
 {
-    // Prompts the user to enter the current day of the week.
-    Console.WriteLine("Enter the current day of the week:");
-
-    // Stores the user's input.
-    string userInput = Console.ReadLine();
-
-    // Converts the user's input into the enum data type.
-    currentDay = (DaysOfWeek)Enum.Parse(typeof(DaysOfWeek), userInput, true);
-
-    // Displays the successfully parsed day.
-    Console.WriteLine("You entered: " + currentDay);
-}
-catch
-{
-    // Displays an error message if the user enters an invalid day.
-    Console.WriteLine("Please enter an actual day of the week.");
+    // This property stores the amount value.
+    public decimal Amount { get; set; }
 }
 
-// Enum for the days of the week.
-public enum DaysOfWeek
+// This class contains the Main method.
+class Program
 {
-    Monday,
-    Tuesday,
-    Wednesday,
-    Thursday,
-    Friday,
-    Saturday,
-    Sunday
+    // This is the entry point of the program.
+    static void Main(string[] args)
+    {
+        // Creates an object of type Number.
+        Number number = new Number();
+
+        // Assigns a decimal value to the Amount property.
+        number.Amount = 12.34m;
+
+        // Prints the Amount value to the console.
+        Console.WriteLine(number.Amount);
+    }
 }
