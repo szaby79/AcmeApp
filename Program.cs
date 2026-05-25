@@ -1,20 +1,22 @@
 ﻿using System;
-using System.IO;
+
+// Gets the current date and time.
+DateTime currentTime = DateTime.Now;
+
+// Prints the current date and time to the console.
+Console.WriteLine("Current date and time: " + currentTime);
 
 // Asks the user to enter a number.
 Console.WriteLine("Please enter a number:");
 
 // Stores the user's input.
-string userNumber = Console.ReadLine();
+string userInput = Console.ReadLine();
 
-// Defines the file path.
-string filePath = "numberLog.txt";
+// Converts the user's input into an integer.
+int hours = Convert.ToInt32(userInput);
 
-// Writes the user's number to the text file.
-File.WriteAllText(filePath, userNumber);
+// Adds the entered number of hours to the current time.
+DateTime futureTime = currentTime.AddHours(hours);
 
-// Reads the contents of the text file.
-string fileContents = File.ReadAllText(filePath);
-
-// Prints the contents of the text file to the console.
-Console.WriteLine("The number in the text file is: " + fileContents);
+// Prints the future time to the console.
+Console.WriteLine("In " + hours + " hours, the time will be: " + futureTime);
