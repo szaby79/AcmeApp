@@ -1,22 +1,40 @@
 ﻿using System;
 
-// Gets the current date and time.
-DateTime currentTime = DateTime.Now;
+// This class demonstrates constructor chaining.
+public class ConstructorExample
+{
+    // Const variable that cannot be changed.
+    public const string Species = "Human";
 
-// Prints the current date and time to the console.
-Console.WriteLine("Current date and time: " + currentTime);
+    // Property for the name.
+    public string Name { get; set; }
 
-// Asks the user to enter a number.
-Console.WriteLine("Please enter a number:");
+    // Default constructor that chains to the second constructor.
+    public ConstructorExample() : this("Unknown")
+    {
+    }
 
-// Stores the user's input.
-string userInput = Console.ReadLine();
+    // Constructor that accepts a name parameter.
+    public ConstructorExample(string name)
+    {
+        // Assigns the parameter value to the Name property.
+        Name = name;
+    }
+}
 
-// Converts the user's input into an integer.
-int hours = Convert.ToInt32(userInput);
+// This class contains the Main method.
+class Program
+{
+    // This is the entry point of the program.
+    static void Main(string[] args)
+    {
+        // Creates an object using the var keyword.
+        var person = new ConstructorExample();
 
-// Adds the entered number of hours to the current time.
-DateTime futureTime = currentTime.AddHours(hours);
+        // Prints the const variable.
+        Console.WriteLine("Species: " + ConstructorExample.Species);
 
-// Prints the future time to the console.
-Console.WriteLine("In " + hours + " hours, the time will be: " + futureTime);
+        // Prints the person's name.
+        Console.WriteLine("Name: " + person.Name);
+    }
+}
