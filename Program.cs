@@ -1,40 +1,33 @@
 ﻿using System;
 
-// This class demonstrates constructor chaining.
-public class ConstructorExample
+try
 {
-    // Const variable that cannot be changed.
-    public const string Species = "Human";
+    // Asks the user to enter their age.
+    Console.WriteLine("Please enter your age:");
 
-    // Property for the name.
-    public string Name { get; set; }
+    // Stores the user's input.
+    int age = Convert.ToInt32(Console.ReadLine());
 
-    // Default constructor that chains to the second constructor.
-    public ConstructorExample() : this("Unknown")
+    // Checks if the age is zero or negative.
+    if (age <= 0)
     {
+        // Throws an exception with a custom error message.
+        throw new Exception("Age cannot be zero or negative.");
     }
 
-    // Constructor that accepts a name parameter.
-    public ConstructorExample(string name)
-    {
-        // Assigns the parameter value to the Name property.
-        Name = name;
-    }
+    // Calculates the user's birth year.
+    int birthYear = DateTime.Now.Year - age;
+
+    // Displays the birth year.
+    Console.WriteLine("You were born in approximately: " + birthYear);
 }
-
-// This class contains the Main method.
-class Program
+catch (FormatException)
 {
-    // This is the entry point of the program.
-    static void Main(string[] args)
-    {
-        // Creates an object using the var keyword.
-        var person = new ConstructorExample();
-
-        // Prints the const variable.
-        Console.WriteLine("Species: " + ConstructorExample.Species);
-
-        // Prints the person's name.
-        Console.WriteLine("Name: " + person.Name);
-    }
+    // Displays an error message if the user enters invalid text.
+    Console.WriteLine("Please enter a valid number.");
+}
+catch (Exception ex)
+{
+    // Displays a general error message for all other exceptions.
+    Console.WriteLine(ex.Message);
 }

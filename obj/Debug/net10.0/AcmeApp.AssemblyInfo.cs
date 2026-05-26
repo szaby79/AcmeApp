@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AcmeApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d897f3532fb886262a0323b80a57b359b320a792")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+15fdfba5bd09510b5a9fb1b9b8a8d35b4027e64e")]
 [assembly: System.Reflection.AssemblyProductAttribute("AcmeApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AcmeApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
